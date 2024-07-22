@@ -1,0 +1,42 @@
+function doPost(e) {
+  var params = JSON.parse(e.postData.contents);
+  var size = params.size;
+  var name = params.itemName;
+  var iceLevel = params.iceLevel;
+  var sugarLevel = params.sugarLevel;
+  var topping = params.topping;
+  var price = params.price;
+  
+  var SpreadSheet = SpreadsheetApp.openById("YOUR_GOOGLE_SHEET_ID");
+  var Sheet = SpreadSheet.getSheets()[0];
+  var LastRow = Sheet.getLastRow();
+  let now = new Date();
+
+  Sheet.getRange(LastRow+1, 1).setValue(LastRow);
+  Sheet.getRange(LastRow+1, 2).setValue(size);
+  Sheet.getRange(LastRow+1, 3).setValue(name);
+  Sheet.getRange(LastRow+1, 4).setValue(iceLevel);
+  Sheet.getRange(LastRow+1, 5).setValue(sugarLevel);
+  Sheet.getRange(LastRow+1, 6).setValue(topping);
+  Sheet.getRange(LastRow+1, 7).setValue(price);
+  Sheet.getRange(LastRow+1, 8).setValue(now);
+
+  return ContentService.createTextOutput("200 OK");
+}
+function doGet(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var data = sheet.getDataRange().getValues();
+  
+  var headers = data[0];
+  var rows = [];
+  
+  for (var i = 1; i < data.length; i++) {
+    var rowData = {};
+    for (var j = 0; j < headers.length; j++) {
+      rowData[headers[j]] = data[i][j];
+    }
+    rows.push(rowData);
+  }
+  let jsonResponse = JSON.stringify(rows, null, 2);
+  return ContentService.createTextOutput(jsonResponse).setMimeType(ContentService.MimeType.JSON);
+}

@@ -1,0 +1,111 @@
+function doGet() {
+  let menu = [
+    {
+      "name":"熟成紅茶",
+      "price": {
+        "l": 40,
+        "m": 35
+      },
+      "description": "木質帶熟果香調的風味，流露熟齡男子的沈穩氣息，低調而迷人。嚴選自斯里蘭卡產區之茶葉，帶有濃郁果香及醇厚桂圓香氣；與肉類料理一同品嚐，得以化解舌尖上所殘留的油膩感。",
+      "imageUrl": "https://www.kebuke.com/wp-content/uploads/2020/12/202307193753（熟成紅茶）.jpg"
+    },{
+      "name":"麗春紅茶",
+      "price": {
+        "l": 40,
+        "m": 35
+      },
+      "description": "淡雅輕盈的花香調，可比嬌豔欲滴的罌粟紅花，散發名門閨秀的氣質，優雅而令人傾心。取自罕見的斯里蘭卡中高海拔產區茶葉，帶清爽孤傲的花香；搭配海鮮料理享用，為中和腥羶味的首選。",
+      "imageUrl": "https://www.kebuke.com/wp-content/uploads/2020/12/202307193766（麗春紅茶）.jpg"
+    },{
+      "name":"胭脂紅茶",
+      "price": {
+        "l": 50,
+        "m": 45
+      },
+      "description": "恬淡的果香調與一抹蜜桃風味，伴隨玫瑰與茉莉花香的情蜜纏綿，好似唇抹胭脂的綺麗女子。清新的紅茶如髮簪鑲嵌的金絲紋理，將60年代華洋集於一身的氛圍，化為迷人的戀舊意識。",
+      "imageUrl": "https://www.kebuke.com/wp-content/uploads/2020/12/202307193760（胭脂紅茶）.jpg"
+    },{
+      "name":"金蜜紅茶",
+      "price": {
+        "l": 60,
+        "m": 50
+      },
+      "description": "以熟成紅茶為基底，散發出木質帶熟果香調的風味，是經典不敗的榜上清單，本次加入觸發舌尖奧妙的沁甜蜂蜜，讓經典茶韻更增添層次風味。＊無糖僅蜂蜜甜，另有少蜜選項，正常甜與微糖會額外加糖液。",
+      "imageUrl": "https://www.kebuke.com/wp-content/uploads/2023/09/202307193790（金蜜紅茶）.jpg"
+    },{
+      "name":"春芽綠茶",
+      "price": {
+        "l": 40,
+        "m": 35
+      },
+      "description": "縱身綠叢、提筆描繪的青山少年，在春滿四溢的山林中擁抱自然、探索枝芽於舌尖的渴望。萃取自台灣綠茶，蘊含繁茂枝葉所飽存的風土，初嚐甘甜圓潤與低苦澀，青翠欲滴即不絕於口。",
+      "imageUrl": "https://www.kebuke.com/wp-content/uploads/2020/12/202307194282（春芽綠茶）.jpg"
+    },{
+      "name":"雪花冷露",
+      "price": {
+        "l": 40,
+        "m": 35
+      },
+      "description": "出於精煉的冬瓜，經歲月的火侯，成就獨有的韻味及香氣，彷彿古厝裡安然自得、望著懷舊時鐘的老奶奶，一會兒迎著藺草扇起的微風、配著收音機，享受溫煦的午後人生。",
+      "imageUrl": "https://www.kebuke.com/wp-content/uploads/2020/12/202307193770（雪花冷露）.jpg"
+    },{
+      "name":"熟成冷露",
+      "price": {
+        "l": 40,
+        "m": 35
+      },
+      "description": "冬瓜與紅茶的極致特調，慢火入味的冬瓜香氣將清沁滑順的紅茶帶入另一種層次。回憶起於雨煙橋下抽著煙斗、曾經年少的阿公，在舊識中迂迴的嫵媚，作為生活與樸實的調和劑。",
+      "imageUrl": "https://www.kebuke.com/wp-content/uploads/2020/12/202307193778（熟成冷露）.jpg"
+    },{
+      "name":"春芽冷露",
+      "price": {
+        "l": 40,
+        "m": 35
+      },
+      "description": "春芽冷露是一股耐人尋味的質感，如同愛好茶酒和詩詞的阿伯。冬瓜陳年的尾韻，於茶葉清甜圓潤的餘韻下回甘，兩者所釋放的渾厚香氣，尋尋覓覓使人意猶未盡，適合與文學一同啜飲。",
+      "imageUrl": "https://www.kebuke.com/wp-content/uploads/2020/12/202307193785（春芽冷露）.jpg"
+    },{
+      "name":"熟成歐蕾",
+      "price": {
+        "l": 65,
+        "m": 55
+      },
+      "description": "醇厚鮮奶交織經典紅茶的奶茶",
+      "imageUrl": "https://www.kebuke.com/wp-content/uploads/2020/12/202307194058（熟成歐蕾）.jpg"
+    },{
+      "name":"冷露歐蕾",
+      "price": {
+        "l": 65,
+        "m": 55
+      },
+      "description": "冬瓜熬煮的冬瓜露遇上醇厚鮮奶",
+      "imageUrl": "https://www.kebuke.com/wp-content/uploads/2020/12/202307194077（冷露歐蕾）.jpg"
+    },{
+      "name":"白玉歐蕾",
+      "price": {
+        "l": 70,
+        "m": 60
+      },
+      "description": "醇厚鮮奶茶咀嚼著Ｑ彈白透珍珠",
+      "imageUrl": "https://www.kebuke.com/wp-content/uploads/2020/12/202307194187（白玉歐蕾）.jpg"
+    },{
+      "name":"金蜜歐蕾",
+      "price": {
+        "l": 70,
+        "m": 60
+      },
+      "description": "奶與茶香四溢而蜂蜜藏在喉間裡",
+      "imageUrl": "https://www.kebuke.com/wp-content/uploads/2023/09/202307194092（金蜜歐蕾）.jpg"
+    },{
+      "name": "黑蜜歐蕾",
+      "price": {
+        "l": 70,
+        "m": 60
+      },
+      "description": "茶與奶香背後藏匿的是恰如其分的餅香炒糖韻",
+      "imageUrl": "https://www.kebuke.com/wp-content/uploads/2023/09/202307194094-1（黑密歐蕾）.jpg"
+    },
+  ]
+  let jsonResponse = JSON.stringify(menu, null, 2);
+  return ContentService.createTextOutput(jsonResponse).setMimeType(ContentService.MimeType.JSON);
+}
